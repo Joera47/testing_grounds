@@ -1,0 +1,21 @@
+<h2>Index Page</h2>
+
+<%= form_for @videos, :html => {:multipart => true} do |f| %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.file_field :video %>
+  </p>
+
+  <p><%= f.submit %></p>
+<% end %>
+
+<%= video_tag @video1.video, :size => "320x240", :controls => true %>
+
+<%= image_tag @video1.video_url.to_s %>
