@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'carrierwave'
-
+gem 'carrierwave' 
+gem 'carrierwave-base64' 
+gem 'rmagick'
 
 
 
