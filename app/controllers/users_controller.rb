@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  require 'base64'
 
   # GET /users
   # GET /users.json
   def index
+    @user = User.first
     @users = User.all
   end
 
