@@ -15,9 +15,15 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <div id="my_camera"></div>
+
+  <input type=button value="Take Snapshot" onClick="take_snapshot()">
+
   <div class="field">
+    <%= f.hidden_field :profile_photo %>
     <%= f.label :profile_photo %><br>
-    <%= f.text_field :profile_photo %>
+    <div id="results">Your captured image will appear here...</div>
   </div>
   <div class="actions">
     <%= f.submit %>
