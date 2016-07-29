@@ -1,6 +1,6 @@
 function take_snapshot(){
     Webcam.snap(function(data_uri) {
-        id = $('[id*="_image"]');
+        id = $('[id*="_profile_photo"]');
 
         if (id.length) {
             id.val(data_uri);
