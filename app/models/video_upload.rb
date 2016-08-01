@@ -7,7 +7,7 @@ class VideoUpload < ActiveType::Object
   validates :title, presence: true
 
   def upload!(user)
-	account = Yt::Account.new access_token: user.token
+	account = Yt::Account.new access_token: Token.first.token
 	account.upload_video self.file, title: self.title, description: self.description
   end
 end

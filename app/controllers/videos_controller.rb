@@ -1,6 +1,8 @@
 class VideosController < ApplicationController
+	require 'oauth2'
 	def index
 		@videos = Video.order('created_at DESC')
+		
 	end
 
 	def new
