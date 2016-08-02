@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-	require 'oauth2'
 	def index
 		@videos = Video.order('created_at DESC')
 		
@@ -7,6 +6,13 @@ class VideosController < ApplicationController
 
 	def new
 		@video = Video.new
+	end
+
+	def edit
+		@video = Video.find(params[:id])
+		@link = 'http://youtube.com/watch?v=' + @video.uid
+		@youtube_video = Yt::Video.new url: @link
+		byebug
 	end
 
 	def create
